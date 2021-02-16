@@ -13,7 +13,7 @@ const BABEL_PLUGINS = [
 ];
 
 export const OUTPUT_PATH = 'dist';
-export const OUTPUT_NAME = 'asyncTrainer';
+export const OUTPUT_NAME = 'meari';
 
 export function mergeEntryConfig(options = {}) {
   const plugins = options.plugins || [];
