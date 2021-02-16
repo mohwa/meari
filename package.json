@@ -1,10 +1,10 @@
 {
-  "name": "async-trainer",
+  "name": "meari",
   "version": "0.0.1",
   "description": "",
   "keywords": [],
-  "module": "dist/async-trainer.esm.js",
-  "main": "dist/async-trainer.js",
+  "module": "dist/meari.esm.js",
+  "main": "dist/meari.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mohwa/async-trainer.git"
+    "url": "git+https://github.com/mohwa/meari.git"
   },
   "author": {
     "name": "mohwa",
@@ -30,7 +30,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mohwa/async-trainer/issues",
+    "url": "https://github.com/mohwa/meari/issues",
     "email": "yanione2@gmail.com"
   },
   "files": [
@@ -38,7 +38,7 @@
     "README.md",
     "LICENSE.md"
   ],
-  "homepage": "https://github.com/mohwa/async-trainer#readme",
+  "homepage": "https://github.com/mohwa/meari#readme",
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/node": "^7.12.10",
