@@ -4,7 +4,7 @@ The library which will be able to handle promises as various ways
 
 # Concept
 
-This library because it is based only a promise constructor so is not need a browsers of higher version supporting `Promise.all` or `Promise.allSettled` functions
+This library because it is based only a promise constructor so is not need a browsers of higher version supporting [Promise.all](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all) or [Promise.allSettled](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled) functions
 
 > For examples `seq` and `seqAll` functions will be able to replaces `Promise.all` and `Promise.allSettled` functions
 
