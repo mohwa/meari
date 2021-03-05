@@ -24,7 +24,7 @@ http://mohwa.github.io/meari
 
 Most of modern browsers(chrome, edge, firefox ...), NodeJS
 
-## Main API  
+## How to use  
  
 ```javascript
 import {
