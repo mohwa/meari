@@ -1,8 +1,16 @@
 # meari
 
+The library which will be able to handle promises as various ways
+
 # Concept
+
+This library because it is based only a promise constructor so is not need a browsers of higher version supporting `Promise.all` or `Promise.allSettled` functions
+
+> For examples `seq` and `seqAll` functions will be able to replaces `Promise.all` and `Promise.allSettled` functions
+
+In addition, it is supporting various functions for multiple situation 
  
- # Install
+# Install
  
  ```javascript
  npm i meari
@@ -13,6 +21,8 @@
 http://mohwa.github.io/meari
  
 # Support Platforms
+
+Most of modern browsers(chrome, edge, firefox ...), NodeJS
 
 ## Main API  
  
@@ -30,6 +40,9 @@ import {
   retryAll,
   assert,
   assertAll,
+  every,
+  some,
+  toSync
 } from 'meari';
 
 once(() => { console.log('once'); }, 1000)(); // once
@@ -246,4 +259,38 @@ assertAll([c1, c2, c3], 3, 1000)
     ]    
      */
   });
+
+const p1 = Promise.resolve(1);
+const p2 = Promise.resolve(2);
+const p3 = Promise.resolve(3);
+
+every([p1, p2, p3]).then(v => {
+  console.log(v); // true
+});
+
+const p1 = Promise.reject(1);
+const p2 = Promise.reject(2);
+const p3 = Promise.resolve(3);
+
+some([p1, p2, p3]).then(v => {
+  console.log(v); // true
+});
+
+const p1 = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(1), 300);
+  });
+};
+
+const p2 = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(2), 100);
+  });
+};
+
+toSync(p1()).then(v => console.log(v));
+toSync(p2()).then(v => console.log(v));
+
+// 1
+// 2
 ```
