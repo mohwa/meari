@@ -1,4 +1,20 @@
-import { once, delay, seq, seqAll, map, mapAll, race, raceAll, retry, retryAll, assert, assertAll } from '../lib';
+import {
+  once,
+  delay,
+  seq,
+  seqAll,
+  map,
+  mapAll,
+  race,
+  raceAll,
+  retry,
+  retryAll,
+  assert,
+  assertAll,
+  every,
+  some,
+  toSync,
+} from '../lib';
 
 // delay(3000).then(() => {
 // const p1 = Promise.resolve(1);
@@ -211,11 +227,60 @@ import { once, delay, seq, seqAll, map, mapAll, race, raceAll, retry, retryAll, 
 //      */
 //   });
 
-once(() => {
-  console.log('once');
-}, 1000)(); // once
-
-delay(1000).then(() => {
-  console.log('start');
-}); // start
+// once(() => {
+//   console.log('once');
+// }, 1000)(); // once
+//
+// delay(1000).then(() => {
+//   console.log('start');
+// }); // start
 // });
+
+// var p1 = Promise.resolve(1);
+// var p2 = Promise.resolve(2);
+// var p3 = Promise.resolve(3);
+//
+// every([p1, p2, p3]).then(v => {
+//   console.log(v); // true
+// });
+//
+// var p1 = Promise.reject(1);
+// var p2 = Promise.reject(2);
+// var p3 = Promise.resolve(3);
+//
+// some([p1, p2, p3]).then(v => {
+//   console.log(v); // true
+// });
+//
+//
+// var p1 = () => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => resolve(1), 200);
+//   });
+// };
+//
+// var p2 = () => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => resolve(2), 2000);
+//   });
+// };
+//
+// var p3 = () => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => resolve(3), 1500);
+//   });
+// };
+//
+// var p4 = () => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => resolve(4), 100);
+//   });
+// };
+//
+// toSync(Promise.resolve(1)).then(v => console.log(v));
+// toSync(Promise.resolve(2)).then(v => console.log(v));
+// toSync(Promise.resolve(4)).then(v => console.log(v));
+// toSync(Promise.resolve(3)).then(v => console.log(v));
+// toSync(p4()).then((v) => console.log(v));
+// toSync(p2()).then((v) => console.log(v));
+// toSync(p3()).then((v) => console.log(v));
