@@ -2,7 +2,7 @@
   "name": "meari",
   "version": "0.0.1",
   "description": "",
-  "keywords": [],
+  "keywords": ["retry", "promise", "toSync", "some", "every", "assert", "race", "map", "seq", "delay", "once", "javascript", "front-end", "web"],
   "module": "dist/meari.esm.js",
   "main": "dist/meari.js",
   "types": "dist/index.d.ts",

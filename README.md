@@ -8,7 +8,7 @@ This library because it is based only a promise constructor so is not need a bro
 
 > For examples `seq` and `seqAll` functions will be able to replaces `Promise.all` and `Promise.allSettled` functions
 
-In addition, it is supporting various functions for multiple situation 
+In addition, it is supporting various functions like `map` and `retry` that in the native is not supports for can using in a multiple situations     
  
 # Install
  
@@ -22,14 +22,14 @@ http://mohwa.github.io/meari
  
 # Support Platforms
 
-Most of modern browsers(chrome, edge, firefox ...), NodeJS
+Most of modern browsers(chrome, edge, firefox ...) that supporting [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), NodeJS
 
-## How to use  
+# Execution order based apis
+
+These features are based execution order like `Promise.all` and `Promise.race` of the native api.
  
 ```javascript
 import {
-  once,
-  delay,
   seq,
   seqAll,
   map,
@@ -40,18 +40,13 @@ import {
   retryAll,
   assert,
   assertAll,
-  every,
-  some,
-  toSync
 } from 'meari';
 
-once(() => { console.log('once'); }, 1000)(); // once
+let p1, p2, p3;
 
-delay(1000).then(() => { console.log('start'); }); // start
-
-const p1 = Promise.resolve(1);
-const p2 = Promise.resolve(2);
-const p3 = Promise.resolve(3);
+p1 = Promise.resolve(1);
+p2 = Promise.resolve(2);
+p3 = Promise.resolve(3);
 
 seq([p1, p2, p3])
   .then(values => {
@@ -71,9 +66,9 @@ seq([p1, p2, p3])
     console.log('finally');
   });
 
-const p1 = Promise.resolve(1);
-const p2 = Promise.reject(new Error());
-const p3 = Promise.resolve(3);
+p1 = Promise.resolve(1);
+p2 = Promise.reject(new Error());
+p3 = Promise.resolve(3);
 
 seqAll([p1, p2, p3])
   .then(values => {
@@ -96,9 +91,9 @@ seqAll([p1, p2, p3])
     console.log('finally');
   });
 
-const p1 = Promise.resolve(1);
-const p2 = Promise.resolve(2);
-const p3 = Promise.resolve(3);
+p1 = Promise.resolve(1);
+p2 = Promise.resolve(2);
+p3 = Promise.resolve(3);
 
 map([p1, p2, p3], ({ value }) => `TEST_${value}`)
   .then(values => {
@@ -111,9 +106,9 @@ map([p1, p2, p3], ({ value }) => `TEST_${value}`)
     console.log('finally');
   });
 
-const p1 = Promise.resolve(1);
-const p2 = Promise.reject(new Error());
-const p3 = Promise.resolve(3);
+p1 = Promise.resolve(1);
+p2 = Promise.reject(new Error());
+p3 = Promise.resolve(3);
 
 mapAll([p1, p2, p3], ({ status, value }) => {
   if (status !== 'rejected') {
@@ -138,9 +133,9 @@ mapAll([p1, p2, p3], ({ status, value }) => {
     console.log('finally');
   });
 
-const p1 = Promise.resolve(1);
-const p2 = Promise.resolve(2);
-const p3 = Promise.resolve(3);
+p1 = Promise.resolve(1);
+p2 = Promise.resolve(2);
+p3 = Promise.resolve(3);
 
 race([p1, p2, p3])
   .then(values => {
@@ -160,9 +155,9 @@ race([p1, p2, p3])
     console.log('finally');
   });
 
-const p1 = Promise.resolve(1);
-const p2 = Promise.reject(new Error());
-const p3 = Promise.resolve(3);
+p1 = Promise.resolve(1);
+p2 = Promise.reject(new Error());
+p3 = Promise.resolve(3);
 
 raceAll([p1, p2, p3])
   .then(values => {
@@ -185,9 +180,9 @@ raceAll([p1, p2, p3])
     console.log('finally 1');
   });
 
-const p1 = () => Promise.resolve(1);
-const p2 = () => Promise.resolve(2);
-const p3 = () => Promise.resolve(3);
+p1 = () => Promise.resolve(1);
+p2 = () => Promise.resolve(2);
+p3 = () => Promise.resolve(3);
 
 retry([p1, p2, p3], 3, 1000)
   .then(values => {
@@ -204,9 +199,9 @@ retry([p1, p2, p3], 3, 1000)
     console.log(value);
   });
 
-const p1 = () => Promise.resolve(1);
-const p2 = () => Promise.reject(new Error());
-const p3 = () => Promise.resolve(3);
+p1 = () => Promise.resolve(1);
+p2 = () => Promise.reject(new Error());
+p3 = () => Promise.resolve(3);
 
 retryAll([p1, p2, p3], 3, 1000).then(values => {
   console.log(values);
@@ -225,11 +220,13 @@ retryAll([p1, p2, p3], 3, 1000).then(values => {
    */
 });
 
-const c1 = () => true;
-const c2 = () => true;
-const c3 = () => true;
+let cb1, cb2, cb3;
 
-assert([c1, c2, c3], 3, 1000)
+cb1 = () => true;
+cb2 = () => true;
+cb3 = () => true;
+
+assert([cb1, cb2, cb3], 3, 1000)
   .then(values => {
     console.log(values);
     /*
@@ -244,11 +241,11 @@ assert([c1, c2, c3], 3, 1000)
     console.log(value);
   });
 
-const c1 = () => true;
-const c2 = () => false;
-const c3 = () => true;
+cb1 = () => true;
+cb2 = () => false;
+cb3 = () => true;
 
-assertAll([c1, c2, c3], 3, 1000)
+assertAll([cb1, cb2, cb3], 3, 1000)
   .then(values => {
     console.log(values);
     /*
@@ -259,30 +256,50 @@ assertAll([c1, c2, c3], 3, 1000)
     ]    
      */
   });
+```
 
-const p1 = Promise.resolve(1);
-const p2 = Promise.resolve(2);
-const p3 = Promise.resolve(3);
+## Main API
+
+These features are can use more easily and simply sometimes in certain situation
+
+```javascript
+import {
+  once,
+  delay,
+  every,
+  some,
+  toSync
+} from 'meari';
+
+once(() => { console.log('once'); }, 1000)(); // once
+
+delay(1000).then(() => { console.log('start'); }); // start
+
+let p1, p2, p3;
+
+p1 = Promise.resolve(1);
+p2 = Promise.resolve(2);
+p3 = Promise.resolve(3);
 
 every([p1, p2, p3]).then(v => {
   console.log(v); // true
 });
 
-const p1 = Promise.reject(1);
-const p2 = Promise.reject(2);
-const p3 = Promise.resolve(3);
+p1 = Promise.reject(1);
+p2 = Promise.reject(2);
+p3 = Promise.resolve(3);
 
 some([p1, p2, p3]).then(v => {
   console.log(v); // true
 });
 
-const p1 = () => {
+p1 = () => {
   return new Promise((resolve) => {
     setTimeout(() => resolve(1), 300);
   });
 };
 
-const p2 = () => {
+p2 = () => {
   return new Promise((resolve) => {
     setTimeout(() => resolve(2), 100);
   });
