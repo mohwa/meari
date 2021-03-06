@@ -1,6 +1,6 @@
 {
   "name": "meari",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "keywords": ["retry", "promise", "toSync", "some", "every", "assert", "race", "map", "seq", "delay", "once", "javascript", "front-end", "web"],
   "module": "dist/meari.esm.js",
