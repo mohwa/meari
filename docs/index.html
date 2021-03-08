@@ -208,7 +208,7 @@
   
 
   <div class="markdown-body">
-    <p>This function calls callback function only once as the async after given delayTime</p>
+    <p>This function calls callback function only once as the async after given delayTime(created timerId will be automatically dispose after performed it)</p>
 
   </div>
 
@@ -254,7 +254,7 @@
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
       <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a></code>:
-        
+        executor
 
       
     
@@ -294,7 +294,7 @@
   
 
   <div class="markdown-body">
-    <p>This function will delay codes execution for given delayTime</p>
+    <p>This function will delay code execution for given delayTime</p>
 
   </div>
 
@@ -371,7 +371,7 @@
   
 
   <div class="markdown-body">
-    <p>This function returns an array which containing every results performed in order of an elements of the promise</p>
+    <p>This function returns an array which containing every results performed in order of a promises if haven't been rejected</p>
 
   </div>
 
@@ -393,7 +393,7 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>promises</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
-	    An array which containing the promises
+	    An array which containing a promise or any value
 
           </div>
           
@@ -448,7 +448,7 @@
   
 
   <div class="markdown-body">
-    <p>This function returns an array which containing every results performed in order of an elements of the promise</p>
+    <p>This function returns an array which containing every results performed in order of a promises</p>
 
   </div>
 
@@ -470,7 +470,7 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>promises</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
-	    An array which containing the promises
+	    An array which containing a promise or any value
 
           </div>
           
@@ -525,7 +525,7 @@
   
 
   <div class="markdown-body">
-    <p>This function returns an array which containing every results performed in order of an elements of the promise</p>
+    <p>This function returns an array which containing every results performed in order of a promises if haven't been rejected</p>
 
   </div>
 
@@ -547,7 +547,7 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>promises</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
-	    An array which containing the promises
+	    An array which containing a promise or any value
 
           </div>
           
@@ -556,7 +556,7 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
-	    A function which will be call on every element of a promises
+	    A function which will be call on every promises
 
           </div>
           
@@ -565,7 +565,7 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>context</span> <code class='quiet'>(any)</code>
-	    A value which will be use as context(this) when executed callback function
+	    A value which will be use as context(this) when performed callback function
 
           </div>
           
@@ -592,7 +592,7 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>map([<span class="hljs-built_in">Promise</span>.resolve(), <span class="hljs-built_in">Promise</span>.resolve()], value =&gt; value).then(<span class="hljs-function"><span class="hljs-params">values</span> =&gt;</span> {}).catch(<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> {});</pre>
+      <pre class='p1 overflow-auto round fill-light'>map([<span class="hljs-built_in">Promise</span>.resolve(), <span class="hljs-built_in">Promise</span>.resolve()], (value) =&gt; value).then(<span class="hljs-function"><span class="hljs-params">values</span> =&gt;</span> {}).catch(<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> {});</pre>
     
   
 
@@ -620,7 +620,7 @@
   
 
   <div class="markdown-body">
-    <p>This function returns an array which containing every results performed in order of an elements of the promise</p>
+    <p>This function returns an array which containing every results performed in order of a promises</p>
 
   </div>
 
@@ -642,7 +642,7 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>promises</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
-	    An array which containing the promises
+	    An array which containing a promise or any value
 
           </div>
           
@@ -651,7 +651,7 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>callback</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a>)</code>
-	    A function which will be call on every element of a promises
+	    A function which will be call on every promises
 
           </div>
           
@@ -660,7 +660,7 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>context</span> <code class='quiet'>(any)</code>
-	    A value which will be use as context(this) when executed callback function
+	    A value which will be use as context(this) when performed callback function
 
           </div>
           
@@ -687,7 +687,7 @@
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'>mapAll([<span class="hljs-built_in">Promise</span>.resolve(), <span class="hljs-built_in">Promise</span>.resolve()], value =&gt; value).then(<span class="hljs-function"><span class="hljs-params">values</span> =&gt;</span> {});</pre>
+      <pre class='p1 overflow-auto round fill-light'>mapAll([<span class="hljs-built_in">Promise</span>.resolve(), <span class="hljs-built_in">Promise</span>.resolve()], (value) =&gt; value).then(<span class="hljs-function"><span class="hljs-params">values</span> =&gt;</span> {});</pre>
     
   
 
@@ -715,7 +715,7 @@
   
 
   <div class="markdown-body">
-    <p>This function returns an array which containing every results in order the promise performed</p>
+    <p>This function returns an array which containing every results in order a promise performed if haven't been rejected</p>
 
   </div>
 
@@ -737,7 +737,7 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>promises</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
-	    An array which containing the promises
+	    An array which containing a promise or any value
 
           </div>
           
@@ -792,7 +792,7 @@
   
 
   <div class="markdown-body">
-    <p>This function returns an array which containing every results in order the promise performed</p>
+    <p>This function returns an array which containing every results in order a promise performed</p>
 
   </div>
 
@@ -814,7 +814,7 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>promises</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
-	    An array which containing the promises
+	    An array which containing a promise or any value
 
           </div>
           
@@ -869,7 +869,7 @@
   
 
   <div class="markdown-body">
-    <p>This function retry the callback function as much as given retryCount to until fulfilled the promise</p>
+    <p>This function retry a callback function as much as given retryCount to until fulfilled each a promise if haven't been rejected</p>
 
   </div>
 
@@ -891,7 +891,7 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>callbacks</span> <code class='quiet'>((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>))</code>
-	    A function or array which returns the promise
+	    A function or array which returns the promise or any value
 
           </div>
           
@@ -964,7 +964,7 @@
   
 
   <div class="markdown-body">
-    <p>This function retry the callback function as much as given retryCount to until fulfilled the promise</p>
+    <p>This function retry a callback function as much as given retryCount to until fulfilled each a promise</p>
 
   </div>
 
@@ -986,7 +986,7 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>callbacks</span> <code class='quiet'>((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">function</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>))</code>
-	    A function or array which returns the promise
+	    A function or array which returns the promise or any value
 
           </div>
           
@@ -1059,7 +1059,7 @@
   
 
   <div class="markdown-body">
-    <p>This function retry the callback function as much as given retryCount to until returns true the callback function</p>
+    <p>This function retry a callback function as much as given retryCount to until each callback function returns true if haven't been rejected</p>
 
   </div>
 
@@ -1154,7 +1154,7 @@
   
 
   <div class="markdown-body">
-    <p>This function retry the callback function as much as given retryCount to until returns true the callback function</p>
+    <p>This function retry a callback function as much as given retryCount to until each callback function returns true</p>
 
   </div>
 
@@ -1249,7 +1249,7 @@
   
 
   <div class="markdown-body">
-    <p>This function returns a true when succeed every promises otherwise returns false</p>
+    <p>This function returns true when succeed every promises otherwise returns false</p>
 
   </div>
 
@@ -1271,7 +1271,7 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>promises</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
-	    An array which containing the promises
+	    An array which containing a promise or any value
 
           </div>
           
@@ -1326,7 +1326,7 @@
   
 
   <div class="markdown-body">
-    <p>This function returns a true when succeed to some promises otherwise returns false</p>
+    <p>This function returns true when succeed to promise at least one otherwise returns false</p>
 
   </div>
 
@@ -1348,7 +1348,7 @@
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>promises</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>)</code>
-	    An array which containing the promises
+	    An array which containing a promise or any value
 
           </div>
           
@@ -1403,11 +1403,11 @@
   
 
   <div class="markdown-body">
-    <p>This function execution synchronously every promises</p>
+    <p>This function performs synchronously a promise</p>
 
   </div>
 
-  <div class='pre p1 fill-light mt0'>toSync</div>
+  <div class='pre p1 fill-light mt0'>toSync(promise: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
@@ -1424,8 +1424,8 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>A</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>)</code>
-	    promise which will be execution synchronously
+            <span class='code bold'>promise</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>)</code>
+	    A promise which will be perform synchronously
 
           </div>
           
