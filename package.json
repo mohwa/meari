@@ -1,6 +1,6 @@
 {
   "name": "meari",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "The library which will be able to handle promises as various ways",
   "keywords": [
     "retry",
