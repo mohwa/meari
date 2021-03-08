@@ -17,10 +17,6 @@ In addition, it is supporting various functions like `map` and `retry` that in t
  ```javascript
  npm i meari
  ```
-
-# API Documentation
-
-http://mohwa.github.io/meari
  
 # Support Platforms
 
