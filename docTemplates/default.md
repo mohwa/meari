@@ -2,8 +2,6 @@
 
 ![npm](https://img.shields.io/npm/v/meari) [![](https://data.jsdelivr.com/v1/package/npm/meari/badge)](https://www.jsdelivr.com/package/npm/meari) ![npm bundle size](https://img.shields.io/bundlephobia/min/meari) ![npm](https://img.shields.io/npm/dm/meari) ![NPM](https://img.shields.io/npm/l/meari)
 
-The library which will be able to handle promises as various ways
-
 # Concept
 
 This library because it is based only a promise constructor so is not need a browsers of higher version supporting [Promise.all](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all) or [Promise.allSettled](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled) functions
