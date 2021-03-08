@@ -1,6 +1,8 @@
 # meari
 
-![npm](https://img.shields.io/npm/v/meari) [![](https://data.jsdelivr.com/v1/package/npm/meari/badge)](https://www.jsdelivr.com/package/npm/meari) ![npm bundle size](https://img.shields.io/bundlephobia/min/meari) ![npm](https://img.shields.io/npm/dm/meari) ![NPM](https://img.shields.io/npm/l/meari)
+ ![npm](https://img.shields.io/npm/v/meari) [![](https://data.jsdelivr.com/v1/package/npm/meari/badge)](https://www.jsdelivr.com/package/npm/meari) ![npm bundle size](https://img.shields.io/bundlephobia/min/meari) ![npm](https://img.shields.io/npm/dm/meari) ![NPM](https://img.shields.io/npm/l/meari)
+
+The library which will be able to handle promises as various ways
 
 # Concept
 
