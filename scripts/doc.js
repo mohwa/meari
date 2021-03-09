@@ -4,7 +4,7 @@ import jsdoc2md from 'jsdoc-to-markdown';
 import fs from 'fs-extra';
 import markdownInclude from 'markdown-include';
 
-const md = jsdoc2md.renderSync({ files: 'lib/index.js' });
+const md = jsdoc2md.renderSync({ files: 'lib/index.js', 'heading-depth': 3 });
 
 fs.outputFileSync(path.resolve(__dirname, '../docTemplates/examples.md'), md);
 

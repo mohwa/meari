@@ -1,4 +1,6 @@
-## Execution order-based apis
+# How to Use
+
+### Execution order-based apis
 
 These features are based execution order like a `Promise.all` and `Promise.race` of a native api
  
