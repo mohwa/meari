@@ -22,10 +22,9 @@ In addition, it is supporting various functions like `map` and `retry` that in t
 
 Most of modern browsers(chrome, edge, firefox ...) that supporting [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), NodeJS
 
-
 # How to Use
 
-## Execution order-based apis
+### Execution order-based apis
 
 These features are based execution order like a `Promise.all` and `Promise.race` of a native api
  
@@ -313,7 +312,7 @@ toSync(p2()).then(v => console.log(v));
 // 2
 ```
 
-## Functions
+### Functions
 
 <dl>
 <dt><a href="#once">once([callback], [delayTime])</a> ⇒ <code>function</code></dt>
@@ -365,7 +364,7 @@ toSync(p2()).then(v => console.log(v));
 
 <a name="once"></a>
 
-## once([callback], [delayTime]) ⇒ <code>function</code>
+### once([callback], [delayTime]) ⇒ <code>function</code>
 This function calls callback function only once as the async after given delayTime(created timerId will be automatically dispose after performed it)
 
 **Kind**: global function  
@@ -382,7 +381,7 @@ once(() => {}, 1000)();
 ```
 <a name="delay"></a>
 
-## delay([delayTime]) ⇒ <code>Promise</code>
+### delay([delayTime]) ⇒ <code>Promise</code>
 This function will delay code execution for given delayTime
 
 **Kind**: global function  
@@ -397,7 +396,7 @@ delay(1000).then(() => {});
 ```
 <a name="seq"></a>
 
-## seq(promises) ⇒ <code>Promise</code>
+### seq(promises) ⇒ <code>Promise</code>
 This function returns an array which containing every results performed in order of a promises if haven't been rejected
 
 **Kind**: global function  
@@ -412,7 +411,7 @@ seq([Promise.resolve(), Promise.resolve()]).then(values => {}).catch(value => {}
 ```
 <a name="seqAll"></a>
 
-## seqAll(promises) ⇒ <code>Promise</code>
+### seqAll(promises) ⇒ <code>Promise</code>
 This function returns an array which containing every results performed in order of a promises
 
 **Kind**: global function  
@@ -427,7 +426,7 @@ seqAll([Promise.resolve(), Promise.resolve()]).then(values => {});
 ```
 <a name="map"></a>
 
-## map(promises, callback, context) ⇒ <code>Promise</code>
+### map(promises, callback, context) ⇒ <code>Promise</code>
 This function returns an array which containing every results performed in order of a promises if haven't been rejected
 
 **Kind**: global function  
@@ -444,7 +443,7 @@ map([Promise.resolve(), Promise.resolve()], (value) => value).then(values => {})
 ```
 <a name="mapAll"></a>
 
-## mapAll(promises, callback, context) ⇒ <code>Promise</code>
+### mapAll(promises, callback, context) ⇒ <code>Promise</code>
 This function returns an array which containing every results performed in order of a promises
 
 **Kind**: global function  
@@ -461,7 +460,7 @@ mapAll([Promise.resolve(), Promise.resolve()], (value) => value).then(values => 
 ```
 <a name="race"></a>
 
-## race(promises) ⇒ <code>Promise</code>
+### race(promises) ⇒ <code>Promise</code>
 This function returns an array which containing every results in order a promise performed if haven't been rejected
 
 **Kind**: global function  
@@ -476,7 +475,7 @@ race([Promise.resolve(), Promise.resolve()]).then(values => {}).catch(value => {
 ```
 <a name="raceAll"></a>
 
-## raceAll(promises) ⇒ <code>Promise</code>
+### raceAll(promises) ⇒ <code>Promise</code>
 This function returns an array which containing every results in order a promise performed
 
 **Kind**: global function  
@@ -491,7 +490,7 @@ raceAll([Promise.resolve(), Promise.resolve()]).then(values => {});
 ```
 <a name="retry"></a>
 
-## retry(callbacks, [retryCount], [delayTime]) ⇒ <code>Promise</code>
+### retry(callbacks, [retryCount], [delayTime]) ⇒ <code>Promise</code>
 This function retry a callback function as much as given retryCount to until fulfilled each a promise if haven't been rejected
 
 **Kind**: global function  
@@ -508,7 +507,7 @@ retry([Promise.resolve(), Promise.resolve()], 3, 1000).then(values => {}).catch(
 ```
 <a name="retryAll"></a>
 
-## retryAll(callbacks, [retryCount], [delayTime]) ⇒ <code>Promise</code>
+### retryAll(callbacks, [retryCount], [delayTime]) ⇒ <code>Promise</code>
 This function retry a callback function as much as given retryCount to until fulfilled each a promise
 
 **Kind**: global function  
@@ -525,7 +524,7 @@ retryAll([Promise.resolve(), Promise.resolve()], 3, 1000).then(values => {});
 ```
 <a name="assert"></a>
 
-## assert(callbacks, [retryCount], [delayTime]) ⇒ <code>Promise</code>
+### assert(callbacks, [retryCount], [delayTime]) ⇒ <code>Promise</code>
 This function retry a callback function as much as given retryCount to until each callback function returns true if haven't been rejected
 
 **Kind**: global function  
@@ -542,7 +541,7 @@ assert([Promise.resolve(), Promise.resolve()], 3, 1000).then(values => {}).catch
 ```
 <a name="assertAll"></a>
 
-## assertAll(callbacks, [retryCount], [delayTime]) ⇒ <code>Promise</code>
+### assertAll(callbacks, [retryCount], [delayTime]) ⇒ <code>Promise</code>
 This function retry a callback function as much as given retryCount to until each callback function returns true
 
 **Kind**: global function  
@@ -559,7 +558,7 @@ assertAll([Promise.resolve(), Promise.resolve()], 3, 1000).then(values => {});
 ```
 <a name="every"></a>
 
-## every(promises) ⇒ <code>Promise</code>
+### every(promises) ⇒ <code>Promise</code>
 This function returns true when succeed every promises otherwise returns false
 
 **Kind**: global function  
@@ -574,7 +573,7 @@ every([Promise.resolve(), Promise.resolve()]).then(v => v);
 ```
 <a name="some"></a>
 
-## some(promises) ⇒ <code>Promise</code>
+### some(promises) ⇒ <code>Promise</code>
 This function returns true when succeed to promise at least one otherwise returns false
 
 **Kind**: global function  
@@ -589,7 +588,7 @@ some([Promise.resolve(), Promise.reject()]).then(v => v);
 ```
 <a name="toSync"></a>
 
-## toSync(promise) ⇒ <code>Promise</code>
+### toSync(promise) ⇒ <code>Promise</code>
 This function performs synchronously a promise
 
 **Kind**: global function  
